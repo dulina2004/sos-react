@@ -2,6 +2,9 @@
 
 A simple implementation of the classic SOS game with a dark theme, built with React and Vite.
 
+🎮 [Play the game here](https://dulina2004.github.io/sos-react/)
+image.png
+
 ## Game Rules
 
 1. The game is played on a 3x3 grid.
