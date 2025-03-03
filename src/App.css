@@ -1,0 +1,151 @@
+:root {
+    --bg-color: #121212;
+    --primary-color: #bb86fc;
+    --secondary-color: #03dac6;
+    --text-color: #e1e1e1;
+    --cell-bg: #1e1e1e;
+    --cell-hover: #2d2d2d;
+    --player-active: #bb86fc;
+    --player-inactive: #6b6b6b;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.sos-game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+h1 {
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.game-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
+.player-info {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.player {
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    background-color: var(--player-inactive);
+    transition: background-color 0.3s ease;
+}
+
+.player.active {
+    background-color: var(--player-active);
+    color: #000;
+    font-weight: bold;
+}
+
+.current-letter {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+}
+
+.letter {
+    font-weight: bold;
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    margin-bottom: 2rem;
+}
+
+.cell {
+    width: 80px;
+    height: 80px;
+    background-color: var(--cell-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+    color: var(--secondary-color);
+}
+
+.cell:hover {
+    background-color: var(--cell-hover);
+}
+
+.game-over {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background-color: rgba(187, 134, 252, 0.1);
+    border-radius: 8px;
+    width: 100%;
+}
+
+.game-over h2 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.final-score {
+    font-size: 1.2rem;
+}
+
+.buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+button {
+    background-color: var(--primary-color);
+    color: #000;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: opacity 0.2s ease;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+@media (max-width: 500px) {
+    .cell {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+}
